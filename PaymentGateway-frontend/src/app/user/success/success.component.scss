@@ -1,0 +1,49 @@
+.success-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    border: 2px solid #ddd; /* Light grey border */
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9; /* Light background color for better contrast */
+  }
+  
+  .success-container h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .success-container p {
+    font-size: 16px;
+    margin: 10px 0;
+  }
+  
+  .success-container strong {
+    font-weight: bold;
+  }
+  
+  .success-container .success-message {
+    color: #28a745; /* Green color for success */
+  }
+  
+  .success-container .failure-message {
+    color: #dc3545; /* Red color for failure */
+  }
+  
+  .success-container button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #007bff; /* Primary color */
+    color: #fff;
+    transition: background-color 0.3s ease;
+  }
+  
+  .success-container button:hover {
+    background-color: #0056b3; /* Darker shade for hover effect */
+  }
+  

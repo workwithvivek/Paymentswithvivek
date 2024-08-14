@@ -1,0 +1,38 @@
+use sDirect;
+
+CREATE TABLE P_USER (
+    UserID INT IDENTITY(1,1) PRIMARY KEY,
+    Name VARCHAR(100),
+    Email VARCHAR(100) UNIQUE NOT NULL,
+    Password VARCHAR(255) NOT NULL,
+    FacebookID VARCHAR(100),
+    GoogleID VARCHAR(100),
+    IsDeleted BIT DEFAULT 0,
+    IsActive BIT DEFAULT 1,
+    CreatedDate DATETIME DEFAULT GETDATE(),
+    CreatedBy VARCHAR(100)
+);
+
+CREATE TABLE P_TRANSACTION (
+    TransactionID INT IDENTITY(1,1) PRIMARY KEY,
+    UserID INT,
+    TransactionAmount DECIMAL(18,2) NOT NULL,
+    PaymentMethod VARCHAR(50) NOT NULL, 
+    TransactionStatus VARCHAR(50) NOT NULL, 
+    TransactionDate DATETIME DEFAULT GETDATE(),
+    FOREIGN KEY (UserID) REFERENCES P_USER(UserID)
+);
+
+
+CREATE TABLE P_INVOICE (
+    InvoiceID INT IDENTITY(1,1) PRIMARY KEY,
+    UserID INT,
+    InvoiceDate DATETIME DEFAULT GETDATE(),
+    TotalAmount DECIMAL(18,2) NOT NULL,
+    FOREIGN KEY (UserID) REFERENCES P_USER(UserID)
+);
+
+
+select * from P_USER;
+select * from P_TRANSACTION;
+select * from P_INVOICE;

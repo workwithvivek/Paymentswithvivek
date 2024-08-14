@@ -1,0 +1,106 @@
+<div class="container-fluid" style="height: 100vh;">
+
+    <div class="row">
+        <div class="col-6 p-0 m-0" style="height: 100vh;">
+            <div class="back-img">
+                <div class="front-img">
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <h1 class="text-center mt-3"></h1>
+    
+            <div class="container d-flex justify-content-center align-items-center" style="height: 80vh;">
+                <div class="" style="border-radius:10px; width: 72%">
+    
+                    <form [formGroup]="registrationform" (submit)="save()" class="p-4 border rounded bg-light shadow-lg">
+    
+                        <h2 class="mb-3">New User Registration</h2>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="name" class="form-control" minLength="3" formControlName="name" id="name"
+                                placeholder="Enter Name">
+                            <div *ngIf="getControl('name')?.errors && getControl('name')?.touched">
+                                <small class="text-danger" *ngIf="getControl('name')?.errors?.['required']">Name is
+                                    required</small>
+                                <!-- <small class="text-danger" *ngIf="getControl('name')?.errors?.['name']">Invalid
+                                    Email</small> -->
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" minLength="3" formControlName="email" id="email"
+                                placeholder="Enter Email">
+                            <div *ngIf="getControl('email')?.errors && getControl('email')?.touched">
+                                <small class="text-danger" *ngIf="getControl('email')?.errors?.['required']">Email is
+                                    required</small>
+                                <small class="text-danger" *ngIf="getControl('email')?.errors?.['email']">Invalid
+                                    Email</small>
+                            </div>
+                        </div>
+    
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <div class="pass" >
+                                <input type="password" class="form-control " formControlName="password" id="password"
+                                placeholder="Password" [type]="showPassword ? 'text' : 'password'" >
+                                <span class="password-toggle-icon position-absolute" (click)="togglePasswordVisibility1()">
+                                    <i class="fas fa-eye" *ngIf="!showPassword"></i>
+                                    <i class="fas fa-eye-slash" *ngIf="showPassword"></i>
+                                </span>
+                            </div>
+                            <div *ngIf="getControl('password')?.errors && getControl('password')?.touched">
+                                <small class="text-danger" *ngIf="getControl('password')?.errors?.['required']">Password is required.
+                                 </small>
+                                <!-- <small class="text-danger" *ngIf="getControl('password')?.errors?.['pattern']">Password should have atleast one Uppercase, one lowercase, one
+                                    special character and a digit and should be 8 characters long</small> -->
+                            </div>
+    
+                        </div>
+
+
+                        <div class="mb-3">
+                            <label for="cp" class="form-label">Confirm Password</label>
+                            <div class="pass" >
+                                <input type="password" class="form-control " formControlName="cp" id="cp"
+                                placeholder="Password" [type]="showcPassword ? 'text' : 'password'" >
+                                <span class="password-toggle-icon position-absolute" (click)="togglePasswordVisibility2()">
+                                    <i class="fas fa-eye" *ngIf="!showcPassword"></i>
+                                    <i class="fas fa-eye-slash" *ngIf="showcPassword"></i>
+                                </span>
+                            </div>
+                            <div *ngIf="getControl('cp')?.errors && getControl('cp')?.touched">
+                                <small class="text-danger" *ngIf="getControl('cp')?.errors?.['required']">Password doesn't match.
+                                 </small>
+                                <!-- <small class="text-danger" *ngIf="getControl('password')?.errors?.['pattern']">Password should have atleast one Uppercase, one lowercase, one
+                                    special character and a digit and should be 8 characters long</small> -->
+                            </div>
+    
+                        </div>
+                      
+                      
+                        <button class="mb-5" type="submit" class="btn btn-primary w-100">Register
+                            </button>
+
+<!-- 
+                            <div class="m-3">
+                            <button class="m-5" type="submit" class="btn btn-light w-100">Continue with Google 
+                            </button>
+                            <button class="m-5" type="submit" class="btn btn-light w-100">Continue with Facebook 
+                            </button>
+                        </div> -->
+                            <!-- <div class="mt-3">
+                           <a routerLink="/register" >Forgot Password?</a> 
+                        </div> -->
+                    </form>
+                </div>
+    
+            </div>
+    
+    
+        </div>
+    </div>
+</div>
+
+
+

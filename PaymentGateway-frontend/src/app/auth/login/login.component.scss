@@ -1,0 +1,34 @@
+.pass{
+
+    display:flex;
+    justify-content: right;
+    align-items: center;
+
+}
+
+.front-img {
+    background-image: url("../../../assets/images/login.png");
+    height: 70%;
+    width: 90%;
+    scale: 0.7;
+    background-repeat: no-repeat;
+    position: absolute;
+    top:25%;
+
+
+}
+
+
+.back-img {
+    background-image: url("../../../assets/images/background.png");
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    //top:21%;
+}
+
+
+// .a{
+//     width:1500px;
+// }

@@ -1,0 +1,16 @@
+<div class="success-container">
+    <div *ngIf="isSuccess; else failureTemplate">
+      <h2>Payment Successful!</h2>
+      <p>Your payment has been processed successfully.</p>
+      <p><strong>Transaction ID:</strong> {{ transactionId }}</p>
+    </div>
+  
+    <ng-template #failureTemplate>
+      <h2>Payment Failed</h2>
+      <p>Unfortunately, your payment could not be processed.</p>
+      <p><strong>Transaction ID:</strong> {{ transactionId }}</p>
+    </ng-template>
+  
+    <button (click)="goBackToHome()">Go Back to Home</button>
+  </div>
+  
